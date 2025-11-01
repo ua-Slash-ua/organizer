@@ -1,0 +1,120 @@
+/* Глобальні CSS-змінні для кольорів і шрифтів */
+:root {
+    --white: #fff;
+    --light-gray: #f5f5f5;
+    --black: #181818;
+    --font-family: 'Mont', system-ui, sans-serif;
+    --third-family: 'Inter Tight', system-ui, sans-serif;
+    --black-600: #222;
+    --gray: #b5b5b5;
+    --light-garay-2: #b5b5b5; /* ймовірно, це опечатка, але додаю як є */
+    --yellow: #ffd600;
+}
+
+/* Reset all margins and paddings */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Remove default list styles */
+ul,
+ol {
+    list-style: none;
+}
+
+/* Remove link underlines and color inheritance */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Reset heading font weights */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+    font-size: inherit;
+}
+
+/* Set default font and smooth rendering */
+body {
+    font-family: var(--font-inter), sans-serif;
+    font-weight: 600;
+    line-height: 1.5;
+    background-color: #fff;
+    color: #000;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Додаємо плавний скрол для всього сайту */
+    scroll-behavior: smooth;
+    height: auto;
+}
+
+/* Images & media responsive by default */
+img,
+picture,
+video,
+canvas,
+svg {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+/* Form elements inherit font */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+/* Button: remove default styles */
+button {
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+/* Remove built-in input number arrows */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Remove default quotes on blockquote and q */
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+    content: '';
+    content: none;
+}
+
+/* Налаштування для секцій з ID для кращого скролу */
+section[id],
+div[id] {
+    scroll-margin-top: 100px; /* Компенсуємо фіксований хедер */
+}
+
+/* Плавний скрол для всіх елементів */
+html {
+    scroll-behavior: smooth;
+}
+
