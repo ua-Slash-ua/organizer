@@ -10,16 +10,68 @@ body{
     background-color: var(--background-main);
     min-height: 100vh;
 }
+
+@font-face {
+    font-family: 'NEXERA';
+    src: url('@p/fonts/nexera.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Studentz';
+    src: url('@p/fonts/stugenz.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+::-webkit-scrollbar {
+    width: 0.5vw;
+}
+
+
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--background-darkness);
+    border-radius: 0.5vw;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--background-light);
+}
+
+::-webkit-scrollbar-corner {
+    background: var(--background-main);
+}
+
+
 :root{
     --background-main: #191919;
     --background-light: #b0b0b0;
     --background-darkness: #4b4b4b;
     --background-layout: #313131;
+    --text-primary: #ffffff;
+    --text-secondary: #d0d0d0;
+    --accent: #ffffff;
+
+    --btn-start-bg: #27ae60;
+    --btn-pause-bg: #b7950b;
+    --btn-end-bg: #c0392b;
+    --btn-drop-bg: #8e44ad;
+
+    --btn-hover-start: #2ecc71;
+    --btn-hover-pause: #f1c40f;
+    --btn-hover-end: #e74c3c;
+    --btn-hover-drop: #9b59b6;
 
     --underline-white: white;
     --underline-light: rgb(201, 201, 201);
     --underline-darkness: rgb(61, 61, 61);
     --underline-black: black;
+
+    --font-size-input: 1.3vw;
+    --font-size-label: 1.5vw;
 
 
 

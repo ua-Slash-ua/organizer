@@ -4,6 +4,7 @@ import notes from '@p/icons/notes.svg'
 import slash from '@p/icons/slash.svg'
 import timer from '@p/icons/timer.svg'
 import settings from '@p/icons/settings.svg'
+import chevronDown   from '@p/icons/chevron-down-minor.svg'
 
 
 export const iconsData: IconDataType = {
@@ -23,6 +24,10 @@ export const iconsData: IconDataType = {
         settings: {
             src: settings,
             alt: 'Settings'
+        },
+        chevronDown: {
+            src: chevronDown,
+            alt: 'chevron Down Minor'
         },
 
     },
