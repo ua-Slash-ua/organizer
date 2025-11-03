@@ -1,10 +1,11 @@
+import {fileLogsConfig} from "@/front-end/configs/file.logs.config";
 
 
-export function log(message: string) {
+export function log(message: string, file?: fileLogsConfig) {
     void fetch('/api/log', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message }),
+        body: JSON.stringify({ message,file }),
     })
         .then(res => {
             if (!res.ok) {

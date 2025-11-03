@@ -1,0 +1,1 @@
+export type fileLogsConfig = 'log.log' | 'timer.log'

@@ -1,0 +1,58 @@
+/* TimerPreviewSection.module.css */
+
+.section {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3vw;
+    background: radial-gradient(circle at center, var(--background-darkness) 0%, var(--background-main) 100%);
+    font-family: 'Studentz', sans-serif;
+    color: var(--background-light);
+}
+
+.time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 14vw;
+    height: 16vw;
+    background: var(--background-layout);
+    border-radius: 1.5vw;
+    box-shadow: 0 1vw 3vw rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.time:hover {
+    transform: scale(1.05);
+    box-shadow: 0 1vw 4vw rgba(255, 255, 255, 0.1);
+}
+
+.time span:first-child {
+    font-size: 8vw;
+    font-weight: 700;
+    line-height: 1;
+    color: #f2f2f2;
+    text-shadow: 0 0 1vw rgba(255, 255, 255, 0.2);
+
+}
+
+.text {
+    font-size: 1.2vw;
+    font-weight: 500;
+    color: var(--background-light);
+    margin-top: 1vw;
+    text-transform: uppercase;
+    letter-spacing: 0.2vw;
+}
+
+.replacer {
+    font-size: 8vw;
+    font-weight: 400;
+    color: var(--background-light);
+    transform: translateY(-1.5vw);
+    text-shadow: 0 0 1vw rgba(255, 255, 255, 0.1);
+}

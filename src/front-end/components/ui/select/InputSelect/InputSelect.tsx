@@ -14,7 +14,9 @@ export default function InputSelect<T extends Record<string, unknown> = Record<s
                                                                                                      defaultValue,
                                                                                                      setValueAction,
                                                                                                      registerAction,
+    registerOptions,
                                                                                                      handleOnChangeAction,
+                                                                                                     error
                                                                                                  }: InputSelectProps<T>) {
     const containerRef = useRef<HTMLDivElement>(null)
     const [active, setActive] = useState(false)
@@ -22,6 +24,7 @@ export default function InputSelect<T extends Record<string, unknown> = Record<s
         defaultValue
             ? processingOptions([defaultValue])[0]
             : processingOptions(options)[0]
+
     )
 
     function handleOption(option: { value: string; label: string }) {
@@ -30,7 +33,12 @@ export default function InputSelect<T extends Record<string, unknown> = Record<s
         handleOnChangeAction?.(option.value)
         setValueAction?.(name, option.value as never)
 
+
     }
+    useEffect(() => {
+        if (defaultValue !== undefined)
+            setValueAction?.(name, defaultValue as never)
+    }, [defaultValue, name, setValueAction])
 
 
     useEffect(() => {
@@ -47,14 +55,19 @@ export default function InputSelect<T extends Record<string, unknown> = Record<s
         <div className={clsx(s.container, className)} ref={containerRef}>
             {label && <label htmlFor={name}>{label}</label>}
 
-            <div className={s.input_container} onClick={() => setActive(!active)}>
+            <div className={s.input_container} onClick={() => {
+                setActive(!active)
+                console.log('click')
+            }}>
                 <input
                     type={inputType}
                     className={s.input}
                     value={value.label}
                     readOnly
-                    {...(registerAction ? registerAction(name as any) : {})}
+                    {...(registerAction ? registerAction(name as never, registerOptions) : {})}
                 />
+                <span className={s.error}>{error??null}</span>
+                
             </div>
 
             <ul className={clsx(s.options_container, active && s.active)}>

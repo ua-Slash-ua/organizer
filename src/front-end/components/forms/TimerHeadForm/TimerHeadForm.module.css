@@ -1,0 +1,75 @@
+.form{
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+}
+
+.btn_start,
+.btn_pause,
+.btn_end,
+.btn_drop {
+    width: 9vw;
+    padding: 0.7vw 1vw;
+    font-size: 0.9vw;
+    border: none;
+    border-radius: 0.4vw;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+    color: var(--text-primary);
+    background: var(--background-darkness);
+}
+
+.form button {
+    font-size: 1.2vw;
+    padding: 0.8vw 2vw;
+    border: none;
+    border-radius: 0.6vw;
+    color: var(--text-primary);
+    background-color: var(--background-darkness);
+    transition: background 0.2s ease, transform 0.1s ease;
+    cursor: pointer;
+    min-width: 8vw;
+    max-width: 20vw;
+}
+
+.btn_start {
+    background-color: var(--btn-start-bg);
+}
+.btn_pause {
+    background-color: var(--btn-pause-bg);
+}
+.btn_end {
+    background-color: var(--btn-end-bg);
+}
+.btn_drop {
+    background-color: var(--btn-drop-bg);
+}
+
+.btn_start:hover:not(:disabled) {
+    background-color: var(--btn-hover-start);
+}
+.btn_pause:hover:not(:disabled) {
+    background-color: var(--btn-hover-pause);
+}
+.btn_end:hover:not(:disabled) {
+    background-color: var(--btn-hover-end);
+}
+.btn_drop:hover:not(:disabled) {
+    background-color: var(--btn-hover-drop);
+}
+
+.btn_start:disabled,
+.btn_pause:disabled,
+.btn_end:disabled,
+.btn_drop:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn_start:active:not(:disabled),
+.btn_pause:active:not(:disabled),
+.btn_end:active:not(:disabled),
+.btn_drop:active:not(:disabled) {
+    transform: scale(0.97);
+}
+
