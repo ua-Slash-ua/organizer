@@ -1,0 +1,54 @@
+
+.section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.6vw;
+    padding: 1.2vw 1.6vw;
+    transition: background 0.3s ease;
+}
+
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    user-select: none;
+    padding-bottom: 0.4vw;
+    border-bottom: 1px solid var(--background-darkness);
+}
+
+.head h1 {
+    font-size: 1.1vw;
+    font-weight: 500;
+    color: var(--text-primary);
+    letter-spacing: 0.03vw;
+}
+
+.icon {
+    width: 1vw;
+    height: 1vw;
+    color: var(--text-secondary);
+    transition: transform 0.3s ease, color 0.2s ease;
+}
+
+.head:hover .icon {
+    color: var(--accent);
+}
+
+.icon_active {
+    transform: rotate(180deg);
+}
+
+.content {
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.35s ease;
+}
+
+.open {
+    max-height: 100vh;
+    opacity: 1;
+    margin-top: 1vw;
+}
+

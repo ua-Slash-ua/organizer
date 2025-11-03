@@ -5,7 +5,6 @@ export function processingOptions(
 ): InputSelectOptionsBaseType[] {
     const first = options[0]
 
-
     if (typeof first === 'number') {
         return (options as number[]).map(option => ({
             value: String(option),

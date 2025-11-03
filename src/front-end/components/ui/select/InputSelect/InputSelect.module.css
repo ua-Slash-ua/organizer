@@ -41,6 +41,7 @@
     max-height: 10vw;
     overflow-y: auto;
     z-index: 10;
+    box-shadow: 0 0 1vw rgba(224, 224, 224, 0.2);
 
 }
 

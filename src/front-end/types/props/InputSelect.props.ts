@@ -1,4 +1,4 @@
-import { Path, UseFormRegister, UseFormSetValue } from "react-hook-form"
+import {Path, RegisterOptions, UseFormRegister, UseFormSetValue} from "react-hook-form"
 
 export type InputSelectProps<T extends Record<string, unknown> = Record<string, unknown>> = {
     label?: string
@@ -9,7 +9,9 @@ export type InputSelectProps<T extends Record<string, unknown> = Record<string, 
     handleOnChangeAction?: (e: string) => void
     defaultValue?: InputSelectOptionsProps
     registerAction?: UseFormRegister<T>
+    registerOptions?: RegisterOptions<T>
     setValueAction?: UseFormSetValue<T>
+    error?: string
 }
 
 
