@@ -1,13 +1,13 @@
 {
   "started_timer": {
-    "start": "pause",
+    "start": "break",
     "start_config": {
       "hours": 0,
       "minutes": 0,
       "seconds": 18
     },
-    "endedAt": "2025-11-03T16:42:30.320Z",
-    "pauseAt": "2025-11-03T16:42:16.572Z",
+    "endedAt": "",
+    "pauseAt": "",
     "started": "2025-11-03T16:42:09.790Z"
   }
 }

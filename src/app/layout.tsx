@@ -4,6 +4,7 @@ import "./reset.css";
 import "./globals.css";
 
 import Header from "@/front-end/components/layouts/Header/Header";
+import {DataTime} from "@/front-end/components/ui/DataTime/DataTime";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,6 +31,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
       <Header/>
         {children}
+      <DataTime/>
       </body>
     </html>
   );
