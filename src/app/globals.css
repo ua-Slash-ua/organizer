@@ -9,6 +9,7 @@ body{
     margin: 0;
     background-color: var(--background-main);
     min-height: 100vh;
+    position: relative;
 }
 
 @font-face {

@@ -24,8 +24,6 @@ export default function Header() {
                             ))
                         }
                     </nav>
-
-
                     <IconComponent {...settings.icon} {...settings} className={s.settings} element={'a'}/>
 
                 </div>

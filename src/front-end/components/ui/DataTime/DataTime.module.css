@@ -1,0 +1,73 @@
+.container {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    background: var(--background-layout);
+    padding: 0.5vw 1vw;
+    bottom: -0.5vw;
+    right: -0.5vw;
+    width: 3vw; /* мінімальна ширина коли згорнуто */
+    height: 3vw; /* мінімальна висота коли згорнуто */
+    border-radius: 0.5vw;
+    box-shadow: 0 0 1vw rgba(0, 0, 0, 0.5);
+    color: var(--text-primary);
+    font-family: sans-serif;
+    font-size: 1vw;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.container.active {
+    width: 9vw; /* ширина коли розгорнуто */
+    height: 5vw; /* висота коли розгорнуто */
+    padding: 0.5vw 1vw;
+
+    bottom: -0.3vw;
+    right: -0.3vw;
+}
+
+.icon {
+    position: absolute;
+    top: 0.3vw;
+    left: 0.3vw;
+    width: 2vw;
+    height: 2vw;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    z-index: 10;
+    transform: rotate(180deg);
+
+}
+
+.container.active .icon {
+    transform: rotate(0);
+    cursor: pointer;
+}
+
+.time,
+.date {
+    opacity: 0;
+    transform: translateY(-0.5vw);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    font-size: var(--font-size-label);
+    cursor: pointer;
+}
+
+.container.active .time,
+.container.active .date {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.time {
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+.date {
+    font-size: var(--font-size-input);
+    color: var(--text-secondary);
+    margin-top: 0.2vw;
+}
