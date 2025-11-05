@@ -5,6 +5,7 @@ import "./globals.css";
 
 import Header from "@/front-end/components/layouts/Header/Header";
 import {DataTime} from "@/front-end/components/ui/DataTime/DataTime";
+import ActionBar from "@/front-end/components/layouts/ActionBar/ActionBar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,6 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <ActionBar/>
       <Header/>
         {children}
       <DataTime/>

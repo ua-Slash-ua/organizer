@@ -1,6 +1,7 @@
 
 html{
     max-width: 100vw;
+    border-radius: 0 ;
 }
 
 body{
@@ -10,6 +11,11 @@ body{
     background-color: var(--background-main);
     min-height: 100vh;
     position: relative;
+
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 @font-face {
@@ -28,7 +34,7 @@ body{
 
 
 ::-webkit-scrollbar {
-    width: 0.5vw;
+    width: .5vw;
 }
 
 
@@ -55,6 +61,10 @@ body{
     --text-primary: #ffffff;
     --text-secondary: #d0d0d0;
     --accent: #ffffff;
+
+    --background-red: #e75948;
+    --background-red-hover: #ea3520;
+
 
     --btn-start-bg: #27ae60;
     --btn-pause-bg: #b7950b;

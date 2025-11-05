@@ -3,11 +3,11 @@
     "start": "break",
     "start_config": {
       "hours": 0,
-      "minutes": 0,
-      "seconds": 18
+      "minutes": "1",
+      "seconds": 0
     },
     "endedAt": "",
     "pauseAt": "",
-    "started": "2025-11-03T16:42:09.790Z"
+    "started": "2025-11-04T15:12:36.327Z"
   }
 }

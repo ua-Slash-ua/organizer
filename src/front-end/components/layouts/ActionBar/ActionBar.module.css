@@ -1,0 +1,89 @@
+.container{
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 2vw;
+    background: var(--background-layout);
+    z-index: 99999999;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5vw;
+
+}
+
+.actions_bar{
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.btn_close{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items:center ;
+    width: 2.5vw;
+    max-width: 2.5vw;
+    height: 100%;
+    background: var(--background-red);
+    cursor: pointer;
+    transition: all .2s;
+
+
+}
+.btn_resize{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center ;
+    width: 2.5vw;
+    max-width: 2.5vw;
+    height: 100%;
+    background: var(--background-light);
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.btn_close img{
+    width: 1.8vw;
+    height: 1.8vw;
+    margin-left: 0.1vw;
+}
+.btn_resize img{
+    width: 1.8vw;
+    height: 1.8vw;
+}
+
+.btn_close:hover{
+    border-radius: 0.5vw;
+    background: var(--background-red-hover);
+
+}
+.btn_resize:hover{
+    border-radius: 0.5vw;
+    background: var(--background-light);
+
+}
+
+.item{
+    height: 100%;
+    background: var(--background-light);
+    font-size: 1vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1vw;
+    cursor: pointer;
+    transition: all .2s;
+}
+.item:hover{
+    border-radius: 0.5vw;
+    background: var(--background-darkness);
+}
