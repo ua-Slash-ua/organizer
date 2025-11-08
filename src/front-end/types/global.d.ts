@@ -10,6 +10,13 @@ declare global {
             openDevTools: () => void;
             closeDevTools: () => void;
             isDevToolsOpen: () => Promise<boolean>;
+            moveWindow: (dx: number, dy: number) => void;
+
         };
     }
+    interface CSSStyleDeclaration {
+        webkitAppRegion?: string;
+    }
+
 }
+

@@ -11,7 +11,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 0.5vw;
-
+    -webkit-app-region: drag;
 }
 
 .actions_bar{

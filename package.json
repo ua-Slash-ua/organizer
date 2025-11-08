@@ -12,10 +12,9 @@
     "electron:dev": "dotenv -e .env concurrently \"npm run dev\" \"wait-on %BASE_URL% && node node_modules/electron/cli.js .\"",
     "electron:build": "npm run build && electron-builder"
   },
-
-
   "dependencies": {
     "clsx": "^2.1.1",
+    "dotenv": "^17.2.3",
     "next": "16.0.1",
     "react": "19.2.0",
     "react-dom": "19.2.0",
@@ -37,31 +36,56 @@
     "wait-on": "^9.0.1"
   },
   "build": {
+    "asar": false,
     "appId": "com.organizer.app",
     "productName": "Organizer",
     "directories": {
       "output": "dist"
     },
     "files": [
-      "next.config.js",
       "package.json",
-      "electron.js",
-      ".next/**/*"
+      "electron/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": ".next",
+        "to": "app/.next",
+        "filter": ["**/*"]
+      },
+      {
+        "from": "public",
+        "to": "app/public",
+        "filter": ["**/*"]
+      },
+      {
+        "from": "package.json",
+        "to": "app/package.json"
+      },
+      {
+        "from": "next.config.js",
+        "to": "app/next.config.js"
+      },
+      {
+        "from": "node_modules/next",
+        "to": "app/node_modules/next",
+        "filter": ["**/*"]
+      },
+      {
+        "from": "node_modules/react",
+        "to": "app/node_modules/react",
+        "filter": ["**/*"]
+      },
+      {
+        "from": "node_modules/react-dom",
+        "to": "app/node_modules/react-dom",
+        "filter": ["**/*"]
+      }
+    ],
+    "asarUnpack": [
+      "**/*.node"
     ],
     "win": {
-      "target": [
-        "nsis"
-      ]
-    },
-    "mac": {
-      "target": [
-        "dmg"
-      ]
-    },
-    "linux": {
-      "target": [
-        "AppImage"
-      ]
+      "target": ["nsis"]
     }
   }
 }

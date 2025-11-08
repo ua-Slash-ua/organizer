@@ -1,14 +1,21 @@
 .form{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 1vw;
 }
-
+.container_choose, .container_action{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+}
 .btn_start,
 .btn_pause,
 .btn_end,
 .btn_drop {
-    width: 9vw;
+    width: 13vw;
     padding: 0.7vw 1vw;
     font-size: 0.9vw;
     border: none;

@@ -1,5 +1,4 @@
-// main.js
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, ipcMain } = require("electron");
 const path = require("path");
 const { startNextServer, stopNextServer } = require("./utils/server");
 const registerWindowHandlers = require("./ipc/window");
@@ -9,7 +8,7 @@ require("dotenv").config();
 let win;
 let nextServer;
 
-function createWindow() {
+async function createWindow() {
     win = new BrowserWindow({
         width: 1200,
         height: 800,
@@ -22,20 +21,34 @@ function createWindow() {
     });
 
     const startURL = process.env.BASE_URL || "http://localhost:3333";
-    win.loadURL(startURL);
+    await win.loadURL(startURL);
 
     win.on("maximize", () => win.webContents.send("window-maximized", true));
     win.on("unmaximize", () => win.webContents.send("window-maximized", false));
 
-    // ✅ Реєстрація обробників ТІЛЬКИ після створення win
     registerWindowHandlers(win);
     registerDevtoolsHandlers(win);
+
+    if (!app.isPackaged) {
+        win.webContents.openDevTools();
+    }
 }
 
-app.whenReady().then(() => {
-    nextServer = startNextServer();
-    // викликаємо createWindow після старту Next
-    setTimeout(createWindow, 3333);
+ipcMain.on("move-window", (event, { dx, dy }) => {
+    const win = BrowserWindow.fromWebContents(event.sender);
+    if (!win) return;
+    const bounds = win.getBounds();
+    win.setBounds({
+        x: bounds.x + dx,
+        y: bounds.y + dy,
+        width: bounds.width,
+        height: bounds.height,
+    });
+});
+
+app.whenReady().then(async () => {
+    nextServer = await startNextServer();
+    await createWindow();
 });
 
 app.on("window-all-closed", () => {

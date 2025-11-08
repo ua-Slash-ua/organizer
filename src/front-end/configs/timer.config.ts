@@ -6,6 +6,18 @@ export type TimerConfigType = {
         "start_config": TimerForm,
         "endedAt": string
         "pauseAt": string
-        "started": string
+        "startedAt": string
     }
 }
+
+export const TimerConfigSchema = {
+    started_timer: {
+        start: 'string',
+        endedAt: 'string',
+        start_config: {
+            hours: 'number',
+            minutes: 'number',
+            seconds: 'number',
+        },
+    },
+} as const;

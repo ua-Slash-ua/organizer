@@ -8,7 +8,7 @@ import IconComponent from "@/front-end/components/icons/IconComponent/IconCompon
 import {iconsData} from "@/front-end/data/icons";
 import clsx from "clsx";
 
-export default function TimerHeadSection({timer, handler, pause, handlePause}: TimerProps) {
+export default function TimerHeadSection({timer, setTimerAction, config , setConfigAction}:TimerProps) {
     const [active, setActive] = useState<boolean>(true)
 
     return (
@@ -17,7 +17,7 @@ export default function TimerHeadSection({timer, handler, pause, handlePause}: T
                 <h1> Налаштування таймеру </h1> <IconComponent {...iconsData.icons.chevronDown} className={s.icon} />
             </div>
             <div className={clsx(s.content, active && s.open)}>
-                <TimerHeadForm timer={timer} pause={pause} handlePause={handlePause} handler={handler}/>
+                <TimerHeadForm timer={timer} setTimerAction={setTimerAction} config={config} setConfigAction={setConfigAction}/>
             </div>
         </section>
     )

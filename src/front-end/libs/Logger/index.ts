@@ -2,6 +2,7 @@ import {fileLogsConfig} from "@/front-end/configs/file.logs.config";
 
 
 export function log(message: string, file?: fileLogsConfig) {
+    console.log(`[log] ${message}`)
     void fetch('/api/log', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

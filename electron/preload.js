@@ -1,6 +1,3 @@
-//preload.js
-
-
 const { contextBridge, ipcRenderer } = require('electron');
 
 contextBridge.exposeInMainWorld('electronAPI', {
@@ -8,8 +5,11 @@ contextBridge.exposeInMainWorld('electronAPI', {
     toggleMaximize: () => ipcRenderer.send('toggle-maximize'),
     onMaximizeChange: (callback) => ipcRenderer.on('window-maximized', (_, state) => callback(state)),
 
-    // нові методи для DevTools
+    // DevTools
     openDevTools: () => ipcRenderer.send('open-devtools'),
     closeDevTools: () => ipcRenderer.send('close-devtools'),
-    isDevToolsOpen: () => ipcRenderer.invoke('is-devtools-open')
+    isDevToolsOpen: () => ipcRenderer.invoke('is-devtools-open'),
+
+    // Переміщення вікна
+    moveWindow: (dx, dy) => ipcRenderer.send('move-window', { dx, dy })
 });
