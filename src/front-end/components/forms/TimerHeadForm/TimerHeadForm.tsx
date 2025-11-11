@@ -89,7 +89,6 @@ export default function TimerHeadForm({timer, setTimerAction, config, setConfigA
         }
         setPause(config?.started_timer.start === 'pause')
 
-
     }, [config, setConfigAction]);
     const onSubmit: SubmitHandler<TimerForm> = (data: TimerForm) => {
         console.log('data = ', data)

@@ -8,6 +8,7 @@ class Menu {
     private timer = '/timer'
     private notes = '/notes'
     private settings = '/settings'
+    private schedule = '/schedule'
 
 
     public getMenu(): MenuDataType {
@@ -35,6 +36,12 @@ class Menu {
                 label: 'Settings',
                 type: ['settings'],
                 icon: iconsData.icons.settings
+            },
+            {
+                href: this.schedule,
+                label: 'Schedule',
+                type: ['primary'],
+                icon: iconsData.icons.schedule
             }
 
         ]
