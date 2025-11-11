@@ -65,6 +65,9 @@ body::-webkit-scrollbar {
     --background-red: #e75948;
     --background-red-hover: #ea3520;
 
+    --background-green: #78e748;
+    --background---background-green-hover: #20ea2d;
+
 
     --btn-start-bg: #27ae60;
     --btn-pause-bg: #b7950b;
@@ -82,6 +85,7 @@ body::-webkit-scrollbar {
     --underline-black: black;
 
     --font-size-input: 1.3vw;
+    --font-size-h3: 2vw;
     --font-size-label: 1.5vw;
 
 

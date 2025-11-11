@@ -20,12 +20,22 @@ export default function InputSelect<T extends Record<string, unknown> = Record<s
                                                                                                  }: InputSelectProps<T>) {
     const containerRef = useRef<HTMLDivElement>(null)
     const [active, setActive] = useState(false)
-    const [value, setValue] = useState(() =>
-        defaultValue
-            ? processingOptions([defaultValue])[0]
-            : processingOptions(options)[0]
-
-    )
+    const [value, setValue] = useState(() => {
+        if (defaultValue !== undefined) {
+            // Якщо defaultValue - це вже об'єкт InputSelectOptionsBaseType
+            if (typeof defaultValue === 'object' && 'value' in defaultValue && 'label' in defaultValue) {
+                return defaultValue;
+            }
+            // Якщо defaultValue - це string або number, шукаємо відповідний option
+            const matchedOption = processingOptions(options).find(
+                opt => opt.value === String(defaultValue)
+            );
+            if (matchedOption) {
+                return matchedOption;
+            }
+        }
+        return processingOptions(options)[0];
+    });
 
     function handleOption(option: { value: string; label: string }) {
         setValue(option)
@@ -35,11 +45,28 @@ export default function InputSelect<T extends Record<string, unknown> = Record<s
 
 
     }
+
     useEffect(() => {
+        console.log('defaultValue', defaultValue);
         if (defaultValue !== undefined)
             setValueAction?.(name, defaultValue as never)
     }, [defaultValue, name, setValueAction])
 
+    // 👇 Додаємо useEffect для оновлення value при зміні defaultValue
+    useEffect(() => {
+        if (defaultValue !== undefined) {
+            if (typeof defaultValue === 'object' && 'value' in defaultValue && 'label' in defaultValue) {
+                setValue(defaultValue);
+            } else {
+                const matchedOption = processingOptions(options).find(
+                    opt => opt.value === String(defaultValue)
+                );
+                if (matchedOption) {
+                    setValue(matchedOption);
+                }
+            }
+        }
+    }, [defaultValue, options]);
 
     useEffect(() => {
         function handleClickOutside(e: MouseEvent) {

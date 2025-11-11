@@ -26,8 +26,8 @@
 }
 
 .icon {
-    width: 1vw;
-    height: 1vw;
+    width: 1vw!important;
+    height: 1vw!important;
     color: var(--text-secondary);
     transition: transform 0.3s ease, color 0.2s ease;
 }
