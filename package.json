@@ -52,42 +52,11 @@
     },
     "files": [
       "package.json",
-      "electron/**/*"
-    ],
-    "extraResources": [
-      {
-        "from": ".next",
-        "to": "app/.next",
-        "filter": ["**/*"]
-      },
-      {
-        "from": "public",
-        "to": "app/public",
-        "filter": ["**/*"]
-      },
-      {
-        "from": "package.json",
-        "to": "app/package.json"
-      },
-      {
-        "from": "next.config.js",
-        "to": "app/next.config.js"
-      },
-      {
-        "from": "node_modules/next",
-        "to": "app/node_modules/next",
-        "filter": ["**/*"]
-      },
-      {
-        "from": "node_modules/react",
-        "to": "app/node_modules/react",
-        "filter": ["**/*"]
-      },
-      {
-        "from": "node_modules/react-dom",
-        "to": "app/node_modules/react-dom",
-        "filter": ["**/*"]
-      }
+      "electron/**/*",
+      ".next/**/*",
+      "node_modules/**/*",
+      "public/**/*",
+      "next.config.js"
     ],
     "mac": {
       "target": [
@@ -105,16 +74,8 @@
     },
     "dmg": {
       "contents": [
-        {
-          "x": 130,
-          "y": 220
-        },
-        {
-          "x": 410,
-          "y": 220,
-          "type": "link",
-          "path": "/Applications"
-        }
+        { "x": 130, "y": 220 },
+        { "x": 410, "y": 220, "type": "link", "path": "/Applications" }
       ]
     },
     "win": {
