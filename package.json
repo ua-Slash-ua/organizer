@@ -41,7 +41,10 @@
     "wait-on": "^9.0.1"
   },
   "build": {
-    "asar": false,
+    "asar": true,
+    "asarUnpack": [
+      "**/node_modules/react/LICENSE"
+    ],
     "appId": "com.organizer.app",
     "productName": "Organizer",
     "directories": {
@@ -86,7 +89,6 @@
         "filter": ["**/*"]
       }
     ],
-    "asarUnpack": ["**/*.node"],
     "mac": {
       "target": [
         {
